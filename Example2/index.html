@@ -9,56 +9,17 @@
         button { margin-top: 10px; }
         #output { margin-top: 20px; padding: 10px; border: 1px solid #ddd; background-color: #f9f9f9; }
     </style>
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Define your own word of what to choose -->
-    <h1>Choose a ????A????</h1>
+    <h1>Choose a Fruit</h1>
     <select id="dropdown">
         <option value="">Select one</option>
     </select>
     <button onclick="showSelected()">Show Selected</button>
     <div id="output"></div>
 
-    <!-- Internal JavaScript block starts here -->
-    ????B????
-        // Function to load options from the text file
-        function loadOptions() {
-            // Fetch data from a txt file
-            fetch(????C????)
-                .then(response => response.text())
-                .then(data => {
-                    // Get reference to the dropdown menu element
-                    const dropdown = ????D????
-                    const options = data.split('\n').map(option => option.trim()).filter(option => option !== '');
-
-                    options.forEach(option => {
-                        const optionElement = document.createElement('option');
-                        optionElement.value = ????E????;
-                        optionElement.textContent = ????F????;
-                        ????G????.appendChild(????H????);
-                    });
-                })
-                .catch(error => console.error('Error loading options:', error));
-        }
-
-        // Function to display the selected option and keep a history of selections
-        function showSelected() {
-            // Get a reference to option of the dropdown element
-            const selectedOption = document.????I????.value;
-            // Get a reference to the HTML element id output to a variable output
-            ????J????
-
-            if (selectedOption) {
-                const newEntry = document.createElement('p');
-                newEntry.textContent = `You selected: ${selectedOption}`;
-                // Append the newEntry as a child of the output element
-                ????K????
-            }
-        }
-
-        // Load options on page load
-        window.onload = loadOptions;
-    </script>
 </body>
 </html>
 
